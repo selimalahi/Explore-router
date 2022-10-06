@@ -9,18 +9,26 @@ import Friends from './components/Friends/Friends';
 import Mane from './Layout/Mane';
 
 function App() {
-  const router =createBrowserRouter([
-    {path: '/', element: <Mane></Mane> ,
-     children:[
-      {path:'/', element: <Home></Home>},
-      {path:'/Home', element:<Home></Home> },
-      {path: 'products', element: <Products></Products>},
-      {path: 'friends', element: <Friends></Friends>},
+  const router = createBrowserRouter([
+    {
+      path: '/', element: <Mane></Mane>,
+      children: [
+        { path: '/', element: <Home></Home> },
+        { path: '/Home', element: <Home></Home> },
+        { path: 'products', element: <Products></Products> },
+        {
+          path: 'friends',
+          loader: async () =>{
+            return fetch('https://jsonplaceholder.typicode.com/users')
+          },
+          element: <Friends></Friends>
+        },
 
-     ]
+      ]
     },
-    
-    {path:'/About', element: <About></About> },
+
+    { path: '/About', element: <About></About> },
+    { path: '*', element: <div>The Route not found</div> },
 
   ])
   return (
