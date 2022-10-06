@@ -5,9 +5,15 @@ import './Header.css'
 const Header = () => {
     return (
         <div className='header'>
-            <Link to='/Home'>Home</Link>
-            <Link to='/About'>About</Link>
-            <Link to='/products'>Products</Link>
+            <nav>
+                <Link to='/Home'>Home</Link>
+                <Link to='/friends'>Friends</Link>
+
+                <Link to='/products'>Products</Link>
+                <Link to='/About'>About</Link>
+            </nav>
+
+            <p>common Page</p>
         </div>
     );
 };
