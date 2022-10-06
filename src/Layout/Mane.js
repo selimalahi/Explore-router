@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../components/Header/Header';
 
-const Main = () => {
+const Mane = () => {
     return (
         <div>
             <Header></Header>
@@ -11,4 +11,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default Mane;
